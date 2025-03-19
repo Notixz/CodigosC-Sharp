@@ -1,0 +1,64 @@
+namespace Parcial1FdP
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int seleccion;
+            Console.WriteLine("Ingrese cual de los 3 puntos quiere realizar");
+            seleccion = int.Parse(Console.ReadLine());
+
+            if (seleccion == 1)
+            {
+                double impuestoR, impuestoM, precioAuto, porcGanancia, gananciaVendedor, precioTotal;
+
+                Console.WriteLine("Ingrese el valor del auto");
+                precioAuto = double.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el porcentaje de ganancia del vendedor");
+                porcGanancia = double.Parse(Console.ReadLine());
+
+                impuestoR = precioAuto * 0.015;
+                impuestoM = precioAuto * 0.06;
+                gananciaVendedor = precioAuto * (porcGanancia);
+                precioTotal = precioAuto + gananciaVendedor + (impuestoR + impuestoM);
+
+                Console.WriteLine($"El precio total del auto es: {precioTotal}");
+                Console.WriteLine($"La comisión del vendedor es: {gananciaVendedor}");
+                Console.WriteLine($"El impuesto de renta del vehiculo es: {impuestoR} \n El impuesto municipal del vehiculo es: {impuestoM}");
+            }
+            else if (seleccion == 2)
+            {
+                double propiedad, valorInm, impuestoP, comision;
+
+                Console.WriteLine( "Ingrese el valor del inmueble");
+                valorInm = double.Parse(Console.ReadLine());
+
+                impuestoP = valorInm * 0.04;
+                comision = valorInm * 0.02;
+                propiedad = valorInm + impuestoP + comision;
+
+                Console.WriteLine("El valor de la propiedad es: ", propiedad);
+                Console.WriteLine("El valor del Impuesto predial es: ", impuestoP);
+                Console.WriteLine("La comision del vendedor es de: ", comision);
+            }
+            else if (seleccion == 3)
+            {
+                double litroG, galonG, precioL, precioG;
+
+                Console.WriteLine("Ingrese el valor del litro de gasolina");
+                precioL = double.Parse(Console.ReadLine());
+                Console.WriteLine("Cuantos galones de gasolina va a consumir");
+                galonG = double.Parse(Console.ReadLine());
+
+                litroG = galonG * 3.78;
+                precioG = precioL * litroG;
+
+                Console.WriteLine($"El precio a pagar por {litroG} galones es de {precioG}");
+            }
+            else
+            {
+                Console.WriteLine("No selecciono ningun punto valido");
+            }
+        }
+    }
+}
