@@ -19,7 +19,7 @@ namespace Parcial1FdP
 
                 impuestoR = precioAuto * 0.015;
                 impuestoM = precioAuto * 0.06;
-                gananciaVendedor = precioAuto * (porcGanancia);
+                gananciaVendedor = (precioAuto * porcGanancia) / 100;
                 precioTotal = precioAuto + gananciaVendedor + (impuestoR + impuestoM);
 
                 Console.WriteLine($"El precio total del auto es: {precioTotal}");
